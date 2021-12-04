@@ -36,6 +36,7 @@ object Project : Project({
         text("gradle.version", "7.3", label = "Gradle version", description = "The gradle versions used during build", allowEmpty = false)
         password("GH.App.Private.Key", "credentialsJSON:6f387e7f-6dc4-4485-b6dd-1ef16abf2eac", display = ParameterDisplay.HIDDEN)
         password("env.LDTTeamJfrogUsername", "credentialsJSON:4186bbc9-49cc-4c8e-ac44-69b26b1bc54e", label = "Username for LDTTeam JFrog", description = "The username of the LDTTeam JFrog Artifactory server.", display = ParameterDisplay.HIDDEN, readOnly = true)
+        param("Default.Branch", "version/latest")
         param("env.GRADLE_VERSION", "%gradle.version%")
         text("jdk.version", "jdk17", label = "JDK Version", description = "The JDK Version used to build java projects.", allowEmpty = false)
     }
@@ -53,7 +54,6 @@ object Project : Project({
 
     subProject(Aequivaleo.Project)
     subProject(BlockOut.Project)
-    subProject(DomumOrnamentum.Project)
     subProject(GraphicsExpanded.Project)
     subProject(Armory.Project)
     subProject(MinecoloniesWiki.Project)
