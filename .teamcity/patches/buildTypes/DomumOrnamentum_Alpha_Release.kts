@@ -17,6 +17,7 @@ create(RelativeId("DomumOrnamentum_Alpha"), BuildType({
 
     params {
         param("Project.Type", "mods")
+        param("gradle.version", "7.2")
         param("env.Version.Patch", "%dep.LetSDevTogether_DomumOrnamentum_OfficialPublications_CommonB.build.number%")
     }
 
