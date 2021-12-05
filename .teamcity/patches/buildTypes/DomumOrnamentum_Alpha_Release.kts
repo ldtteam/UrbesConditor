@@ -17,7 +17,6 @@ create(RelativeId("DomumOrnamentum_Alpha"), BuildType({
 
     params {
         param("Project.Type", "mods")
-        param("jdk.version", "jdk16")
         param("env.Version.Patch", "%dep.LetSDevTogether_DomumOrnamentum_OfficialPublications_CommonB.build.number%")
     }
 
