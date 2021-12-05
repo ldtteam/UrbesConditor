@@ -12,6 +12,7 @@ object Project : Project({
     buildType(Structurize_Beta_Release)
 
     params {
+        param("gradle.version", "7.2")
         param("Default.Branch", "testing/%Current Minecraft Version%")
         param("VCS.Branches", "+:refs/heads/testing/(*)")
         param("env.CURSERELEASETYPE", "beta")
