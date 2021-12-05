@@ -15,7 +15,6 @@ object Project : Project({
         param("Default.Branch", "testing/%Current Minecraft Version%")
         param("VCS.Branches", "+:refs/heads/testing/(*)")
         param("env.CURSERELEASETYPE", "beta")
-        param("jdk.version", "jdk16")
         param("env.Version.Suffix", "-BETA")
     }
 })
