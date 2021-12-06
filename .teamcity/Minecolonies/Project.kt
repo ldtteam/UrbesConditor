@@ -10,7 +10,6 @@ object Project : Project({
     description = "The Minecolonies Minecraft Mod"
 
     params {
-        param("gradle.version", "7.2")
         param("Current Minecraft Version", "main")
         text("Repository", "ldtteam/minecolonies", label = "Repository", description = "The repository for minecolonies.", readOnly = true, allowEmpty = true)
         param("env.Version.Minor", "0")
