@@ -12,7 +12,7 @@ object Project : Project({
     buildType(Minecolonies_Alpha_Release)
 
     params {
-        text("env.crowdinKey", "credentialsJSON:be67336c-4ed1-464c-b531-92270ba39b53", label = "Crowdin key", description = "The API key for crowdin to pull translations", allowEmpty = true)
+        text("env.crowdinKey", "credentialsJSON:56301564-fafc-4136-a281-a30adf2193fa", label = "Crowdin key", description = "The API key for crowdin to pull translations", allowEmpty = true)
         param("Default.Branch", "version/%Current Minecraft Version%")
         param("VCS.Branches", "+:refs/heads/version/(*)")
         param("env.CURSERELEASETYPE", "alpha")
