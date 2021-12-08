@@ -10,6 +10,7 @@ object Structurize_Alpha_Release : BuildType({
 
     params {
         param("Project.Type", "mods")
+        param("gradle.version", "7.2")
         param("env.Version.Patch", "${Structurize_OfficialPublications_CommonB.depParamRefs.buildNumber}")
     }
 
