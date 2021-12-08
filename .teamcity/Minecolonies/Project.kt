@@ -18,6 +18,7 @@ object Project : Project({
         param("Upsource.Project.Id", "minecolonies")
         param("env.Version.Suffix", "")
         param("env.Version.Major", "1")
+        param("Default.Branch", "version/main")
         param("filename.prefix", "minecolonies")
         text("env.Version", "%env.Version.Major%.%env.Version.Minor%.%env.Version.Patch%%env.Version.Suffix%", label = "Version", description = "The version of the project.", display = ParameterDisplay.HIDDEN, allowEmpty = true)
     }
