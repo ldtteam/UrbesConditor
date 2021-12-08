@@ -9,7 +9,6 @@ object Structurize_Alpha_Release : BuildType({
     description = "Releases the mod as Alpha to CurseForge"
 
     params {
-        param("gradle.version", "7.2")
         param("Project.Type", "mods")
         param("jdk.version", "jdk16")
         param("env.Version.Patch", "${Structurize_OfficialPublications_CommonB.depParamRefs.buildNumber}")
