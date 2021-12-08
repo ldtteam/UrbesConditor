@@ -10,7 +10,6 @@ object Structurize_Alpha_Release : BuildType({
 
     params {
         param("Project.Type", "mods")
-        param("jdk.version", "jdk16")
         param("env.Version.Patch", "${Structurize_OfficialPublications_CommonB.depParamRefs.buildNumber}")
     }
 
