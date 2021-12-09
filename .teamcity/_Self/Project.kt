@@ -57,13 +57,10 @@ object Project : Project({
 
     subProject(BlockOut.Project)
     subProject(GraphicsExpanded.Project)
-    subProject(Armory.Project)
     subProject(MinecoloniesWiki.Project)
     subProject(Animatrix.Project)
     subProject(BlockUI.Project)
-    subProject(JVoxelizer.Project)
     subProject(Serverpacklocator.Project)
-    subProject(SmithsCore.Project)
     subProject(Structurize.Project)
     subProject(PerViamInvenire.Project)
     subProject(PistonUnlimited.Project)
