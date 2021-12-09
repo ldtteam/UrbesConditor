@@ -32,6 +32,7 @@ object Project : Project({
         password("GH.App.Id", "credentialsJSON:bc649fd5-86f3-49fb-917d-48cffdec42b9", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.LDTTeamJfrogPassword", "credentialsJSON:fd8e76ea-f284-4185-8a02-f62a98048442", label = "JFrog Password", description = "The password for the LDTTeam JFrog Artifactory server.", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("sonarqube.token", "credentialsJSON:3c063e2e-56d6-453d-9f0c-683da04017d3", display = ParameterDisplay.HIDDEN, readOnly = true)
+        param("env.CROWD_IN_UPLOAD_WITH_FILTERED_BRANCHES_SPEC", "version/.*")
         text("env.DOCKER_USERNAME", "LDTTeamCICD", label = "Docker Username", description = "The username of the user used to connect to the docker registry during docker operations.", allowEmpty = true)
         param("env.CROWD_IN_BUILDING_WITH_FILTERED_BRANCHES_SPEC", "version/.*")
         text("env.DOCKER_REGISTRY", "container.ldtteam.com", label = "Docker Registry", description = "The Docker Registrry to use during docker operations.", allowEmpty = true)
