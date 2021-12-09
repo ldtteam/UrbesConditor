@@ -34,14 +34,4 @@ object Project : Project({
         }
     }
     subProjectsOrder = arrayListOf(RelativeId("Minecolonies_Release"), RelativeId("Minecolonies_UpgradeBetaRelease"), RelativeId("Minecolonies_Beta"), RelativeId("Minecolonies_UpgradeAlphaBeta"), RelativeId("Minecolonies_Alpha"), RelativeId("Minecolonies_OfficialPublications"), RelativeId("Minecolonies_Branches"), RelativeId("Minecolonies_PullRequests_2"), RelativeId("Minecolonies_PullRequests"))
-
-    subProject(Minecolonies_Alpha.Project)
-    subProject(Minecolonies_Beta.Project)
-    subProject(Minecolonies_UpgradeAlphaBeta.Project)
-    subProject(Minecolonies_OfficialPublications.Project)
-    subProject(Minecolonies_Branches.Project)
-    subProject(Minecolonies_Release.Project)
-    subProject(Minecolonies_UpgradeBetaRelease.Project)
-    subProject(Minecolonies_PullRequests_2.Project)
-    subProject(Minecolonies_PullRequests.Project)
 })
