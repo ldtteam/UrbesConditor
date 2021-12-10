@@ -10,6 +10,15 @@ To apply the patch, change the root project
 accordingly, and delete the patch script.
 */
 changeProject(DslContext.projectId) {
+    params {
+        expect {
+            password("env.CROWD_IN_API_KEY", "credentialsJSON:56fece8c-dce1-479e-b7da-403c37b05f99", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN, readOnly = true)
+        }
+        update {
+            password("env.CROWD_IN_API_KEY", "credentialsJSON:8d4330ba-e29c-4060-9e06-389aece07bfe", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN)
+        }
+    }
+
     expectSubProjectsOrder(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"), RelativeId("Armory"), RelativeId("JVoxelizer"), RelativeId("SmithsCore"))
     subProjectsOrder = arrayListOf(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"))
 }
