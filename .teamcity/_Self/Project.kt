@@ -53,7 +53,7 @@ object Project : Project({
             password = "credentialsJSON:48666a0d-3b34-4243-8c9d-e1a9fb4d4148"
         }
     }
-    subProjectsOrder = arrayListOf(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"), RelativeId("Armory"), RelativeId("JVoxelizer"), RelativeId("SmithsCore"))
+    subProjectsOrder = arrayListOf(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"))
 
     subProject(BlockOut.Project)
     subProject(GraphicsExpanded.Project)

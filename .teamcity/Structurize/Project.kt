@@ -32,13 +32,4 @@ object Project : Project({
         }
     }
     subProjectsOrder = arrayListOf(RelativeId("Structurize_Release"), RelativeId("Structurize_UpgradeBetaRelease"), RelativeId("Structurize_Beta"), RelativeId("Structurize_UpgradeAlphaBeta"), RelativeId("Structurize_Alpha"), RelativeId("Structurize_OfficialPublications"), RelativeId("Structurize_Branches"), RelativeId("Structurize_PullRequests2"))
-
-    subProject(Structurize_UpgradeAlphaBeta.Project)
-    subProject(Structurize_OfficialPublications.Project)
-    subProject(Structurize_Beta.Project)
-    subProject(Structurize_UpgradeBetaRelease.Project)
-    subProject(Structurize_Alpha.Project)
-    subProject(Structurize_Release.Project)
-    subProject(Structurize_PullRequests2.Project)
-    subProject(Structurize_Branches.Project)
 })
