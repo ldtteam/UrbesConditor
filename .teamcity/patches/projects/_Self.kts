@@ -15,7 +15,7 @@ changeProject(DslContext.projectId) {
             password("env.CROWD_IN_API_KEY", "credentialsJSON:56fece8c-dce1-479e-b7da-403c37b05f99", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN, readOnly = true)
         }
         update {
-            password("env.CROWD_IN_API_KEY", "credentialsJSON:8d4330ba-e29c-4060-9e06-389aece07bfe", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN)
+            password("env.CROWD_IN_API_KEY", "credentialsJSON:8d4330ba-e29c-4060-9e06-389aece07bfe", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN, readOnly = true)
         }
     }
 
