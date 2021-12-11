@@ -25,7 +25,7 @@ object Project : Project({
     template(GenerateChangelog)
 
     params {
-        password("env.CROWD_IN_API_KEY", "credentialsJSON:56fece8c-dce1-479e-b7da-403c37b05f99", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("env.CROWD_IN_API_KEY", "credentialsJSON:9d0dc22f-1a99-4dc2-a422-7f0fa2abc3e5", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.DOCKER_PASSWORD", "credentialsJSON:6d6b0058-18ff-4648-9393-a3ce7a3c66b1", label = "Docker password", description = "The password used to connect to the docker registry during docker operations.")
         param("env.JDK_VERSION", "%jdk.version%")
         password("env.crowdinKey", "credentialsJSON:be67336c-4ed1-464c-b531-92270ba39b53")
