@@ -36,6 +36,10 @@ object BuildWithRelease : Template({
     vcs {
         root(_Self.vcsRoots.General)
 
+        branchFilter = """
+            +:*
+            -:<default>
+        """.trimIndent()
         showDependenciesChanges = true
     }
 
