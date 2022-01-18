@@ -9,6 +9,10 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
 
     artifactRules = "+:docker-compose.yml"
 
+    params {
+        param("env.DOCKER_PASSWORD", "credentialsJSON:8c3eb73e-8b4e-4be9-b5df-0ec8326dd2e8")
+    }
+
     vcs {
         root(MinecoloniesWiki.vcsRoots.MinecoloniesWiki_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain)
     }
