@@ -2,6 +2,8 @@ package patches.projects
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.Project
+import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.DockerRegistryConnection
+import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.dockerRegistry
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
 
 /*
@@ -22,6 +24,22 @@ changeProject(DslContext.projectId) {
         }
         update {
             text("env.DOCKER_USERNAME", "ldtteam.teamcity", label = "Docker Username", description = "The username of the user used to connect to the docker registry during docker operations.", allowEmpty = true)
+        }
+    }
+
+    features {
+        val feature1 = find<DockerRegistryConnection> {
+            dockerRegistry {
+                id = "PROJECT_EXT_9"
+                name = "LDTTeam Docker Container Registry"
+                url = "https://container.ldtteam.com"
+                userName = "LDTTeamCICD"
+                password = "credentialsJSON:48666a0d-3b34-4243-8c9d-e1a9fb4d4148"
+            }
+        }
+        feature1.apply {
+            userName = "ldtteam.teamcity"
+            password = "credentialsJSON:005f12d7-0753-4116-809e-e963ed88b60f"
         }
     }
 
