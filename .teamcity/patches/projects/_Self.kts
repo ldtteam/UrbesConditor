@@ -10,6 +10,15 @@ To apply the patch, change the root project
 accordingly, and delete the patch script.
 */
 changeProject(DslContext.projectId) {
+    params {
+        expect {
+            password("env.DOCKER_PASSWORD", "credentialsJSON:6d6b0058-18ff-4648-9393-a3ce7a3c66b1", label = "Docker password", description = "The password used to connect to the docker registry during docker operations.")
+        }
+        update {
+            password("env.DOCKER_PASSWORD", "credentialsJSON:8c3eb73e-8b4e-4be9-b5df-0ec8326dd2e8", label = "Docker password", description = "The password used to connect to the docker registry during docker operations.")
+        }
+    }
+
     expectSubProjectsOrder(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"))
     subProjectsOrder = arrayListOf(RelativeId("Minecolonies"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("BlockUI"), RelativeId("Aequivaleo"), RelativeId("PistonUnlimited"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("BlockOut"), RelativeId("Serverpacklocator"), RelativeId("MinecoloniesWiki"))
 }
