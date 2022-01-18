@@ -17,6 +17,12 @@ changeProject(DslContext.projectId) {
         update {
             password("env.DOCKER_PASSWORD", "credentialsJSON:8c3eb73e-8b4e-4be9-b5df-0ec8326dd2e8", label = "Docker password", description = "The password used to connect to the docker registry during docker operations.")
         }
+        expect {
+            text("env.DOCKER_USERNAME", "LDTTeamCICD", label = "Docker Username", description = "The username of the user used to connect to the docker registry during docker operations.", allowEmpty = true)
+        }
+        update {
+            text("env.DOCKER_USERNAME", "ldtteam.teamcity", label = "Docker Username", description = "The username of the user used to connect to the docker registry during docker operations.", allowEmpty = true)
+        }
     }
 
     expectSubProjectsOrder(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"))
