@@ -46,8 +46,8 @@ create(RelativeId("MinecoloniesWebsite"), BuildType({
             name = "Docker Push"
             commandType = push {
                 namesAndTags = """
-                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:latest
-                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:%build.counter%
+                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/website:latest
+                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/website:%build.counter%
                 """.trimIndent()
             }
         }
