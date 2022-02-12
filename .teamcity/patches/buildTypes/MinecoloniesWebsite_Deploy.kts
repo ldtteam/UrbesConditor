@@ -40,7 +40,7 @@ create(RelativeId("MinecoloniesWebsite"), BuildType({
             name = "Docker Stack Deployment"
             commandType = other {
                 subCommand = "stack"
-                commandArgs = "deploy --prune --with-registry-auth -c docker-compose.yml minecolonies_wiki"
+                commandArgs = "deploy --prune --with-registry-auth -c docker-compose.yml minecolonies_website"
             }
         }
         dockerCommand {
