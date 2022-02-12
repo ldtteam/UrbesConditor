@@ -11,13 +11,13 @@ in the project with id = 'MinecoloniesWebsite', and delete the patch script.
 */
 create(RelativeId("MinecoloniesWebsite"), GitVcsRoot({
     id("MinecoloniesWebsite_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain")
-    name = "https://github.com/ldtteam/MinecoloniesWiki#refs/heads/main"
-    url = "https://github.com/ldtteam/MinecoloniesWiki"
+    name = "https://github.com/ldtteam/MinecoloniesWebsite#refs/heads/main"
+    url = "https://github.com/ldtteam/MinecoloniesWebsite"
     branch = "refs/heads/main"
+    checkoutPolicy = GitVcsRoot.AgentCheckoutPolicy.USE_MIRRORS
     authMethod = password {
         userName = "OrionDevelopment"
         password = "credentialsJSON:6131cd14-fa05-44e0-bcb6-d834103f967c"
     }
-    param("useAlternates", "true")
 }))
 
