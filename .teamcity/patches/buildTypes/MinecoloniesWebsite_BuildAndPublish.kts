@@ -29,8 +29,8 @@ create(RelativeId("MinecoloniesWebsite"), BuildType({
                     path = "Dockerfile"
                 }
                 namesAndTags = """
-                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:latest
-                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:%build.number%
+                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/website:latest
+                    %env.DOCKER_REGISTRY%/ldtteam/minecolonies/website:%build.number%
                 """.trimIndent()
                 commandArgs = "--pull"
             }
