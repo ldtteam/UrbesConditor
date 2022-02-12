@@ -32,7 +32,6 @@ create(RelativeId("MinecoloniesWebsite"), BuildType({
                     %env.DOCKER_REGISTRY%/ldtteam/minecolonies/website:latest
                     %env.DOCKER_REGISTRY%/ldtteam/minecolonies/website:%build.number%
                 """.trimIndent()
-                commandArgs = "--pull"
             }
         }
         dockerCommand {
