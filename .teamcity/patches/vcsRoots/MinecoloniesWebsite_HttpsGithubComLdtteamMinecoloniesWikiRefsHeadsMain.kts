@@ -15,5 +15,9 @@ create(RelativeId("MinecoloniesWebsite"), GitVcsRoot({
     url = "https://github.com/ldtteam/MinecoloniesWebsite"
     branch = "refs/heads/main"
     checkoutPolicy = GitVcsRoot.AgentCheckoutPolicy.USE_MIRRORS
+    authMethod = password {
+        userName = "OrionDevelopment"
+        password = "credentialsJSON:ebe28efb-169b-4de7-a4e9-b2026b098541"
+    }
 }))
 
