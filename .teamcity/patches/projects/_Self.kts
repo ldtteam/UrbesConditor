@@ -44,5 +44,5 @@ changeProject(DslContext.projectId) {
     }
 
     expectSubProjectsOrder(RelativeId("Minecolonies"), RelativeId("Aequivaleo"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("PistonUnlimited"), RelativeId("BlockOut"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("BlockUI"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("MinecoloniesWiki"))
-    subProjectsOrder = arrayListOf(RelativeId("Minecolonies"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("BlockUI"), RelativeId("Aequivaleo"), RelativeId("PistonUnlimited"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("BlockOut"), RelativeId("Serverpacklocator"), RelativeId("MinecoloniesWiki"))
+    subProjectsOrder = arrayListOf(RelativeId("Minecolonies"), RelativeId("Structurize"), RelativeId("DomumOrnamentum"), RelativeId("BlockUI"), RelativeId("Aequivaleo"), RelativeId("PistonUnlimited"), RelativeId("Animatrix"), RelativeId("PerViamInvenire"), RelativeId("DataGenerators"), RelativeId("GraphicsExpanded"), RelativeId("BlockOut"), RelativeId("Serverpacklocator"), RelativeId("MinecoloniesWiki"), RelativeId("MinecoloniesWebsite"))
 }
