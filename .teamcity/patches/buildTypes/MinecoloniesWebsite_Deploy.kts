@@ -15,7 +15,7 @@ in the project with id = 'MinecoloniesWebsite', and delete the patch script.
 create(RelativeId("MinecoloniesWebsite"), BuildType({
     id("MinecoloniesWebsite_Deploy")
     name = "Deploy"
-    description = "Deploys the wiki into the swarm"
+    description = "Deploys the website into the swarm"
 
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
