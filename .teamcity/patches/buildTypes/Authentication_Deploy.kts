@@ -36,5 +36,10 @@ create(RelativeId("Authentication"), BuildType({
             }
         }
     }
+
+    dependencies {
+        snapshot(RelativeId("Authentication_Build")) {
+        }
+    }
 }))
 
