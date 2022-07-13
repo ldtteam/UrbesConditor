@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
 
@@ -16,6 +17,16 @@ create(RelativeId("Authentication"), BuildType({
 
     vcs {
         root(RelativeId("Authentication_HttpsGithubComLdtteamAuthenticationGitRefsHeadsMaster"))
+    }
+
+    steps {
+        dockerCommand {
+            commandType = build {
+                source = file {
+                    path = "LDTTeam.Authentication.Server/Dockerfile"
+                }
+            }
+        }
     }
 
     triggers {
