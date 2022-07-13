@@ -21,6 +21,7 @@ create(RelativeId("Authentication"), BuildType({
 
     params {
         param("env.DOCKER_CERT_PATH", "/auth/docker")
+        param("DOCKER_HOST", "tcp://192.168.10.52:2376")
     }
 
     vcs {
