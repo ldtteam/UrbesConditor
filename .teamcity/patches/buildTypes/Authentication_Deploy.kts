@@ -38,7 +38,13 @@ create(RelativeId("Authentication"), BuildType({
     }
 
     dependencies {
-        snapshot(RelativeId("Authentication_Build")) {
+        dependency(RelativeId("Authentication_Build")) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "+:*"
+            }
         }
     }
 }))
