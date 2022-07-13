@@ -3,6 +3,7 @@ package patches.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.dockerSupport
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.DockerCommandStep
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
@@ -22,10 +23,16 @@ create(RelativeId("Authentication"), BuildType({
 
     steps {
         dockerCommand {
+            name = "Build"
             commandType = build {
                 source = file {
                     path = "LDTTeam.Authentication.Server/Dockerfile"
                 }
+                platform = DockerCommandStep.ImagePlatform.Linux
+                namesAndTags = """
+                    container.ldtteam.com/ldtteam/donator-auth:latest
+                    container.ldtteam.com/ldtteam/donator-auth:%build.number%
+                """.trimIndent()
             }
         }
     }
