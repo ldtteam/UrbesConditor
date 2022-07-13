@@ -24,7 +24,7 @@ create(RelativeId("Authentication"), BuildType({
             name = "Deploy"
             commandType = other {
                 subCommand = "stack"
-                commandArgs = "deploy --prune --with-registry-auth -c docker-compose.yml minecolonies_donator_auth"
+                commandArgs = "deploy --prune --with-registry-auth -c docker-compose.yaml minecolonies_donator_auth"
             }
         }
     }
