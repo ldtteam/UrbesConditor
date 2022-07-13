@@ -28,6 +28,7 @@ create(RelativeId("Authentication"), BuildType({
                 source = file {
                     path = "LDTTeam.Authentication.Server/Dockerfile"
                 }
+                contextDir = "."
                 platform = DockerCommandStep.ImagePlatform.Linux
                 namesAndTags = """
                     container.ldtteam.com/ldtteam/donator-auth:latest
