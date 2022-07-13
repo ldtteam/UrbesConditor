@@ -35,6 +35,15 @@ create(RelativeId("Authentication"), BuildType({
                 """.trimIndent()
             }
         }
+        dockerCommand {
+            name = "Push"
+            commandType = push {
+                namesAndTags = """
+                    container.ldtteam.com/ldtteam/donator-auth:latest
+                    container.ldtteam.com/ldtteam/donator-auth:%build.number%
+                """.trimIndent()
+            }
+        }
     }
 
     triggers {
