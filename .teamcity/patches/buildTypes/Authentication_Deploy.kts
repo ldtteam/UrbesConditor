@@ -19,6 +19,10 @@ create(RelativeId("Authentication"), BuildType({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
+    vcs {
+        root(RelativeId("Authentication_HttpsGithubComLdtteamAuthenticationGitRefsHeadsMaster"))
+    }
+
     steps {
         dockerCommand {
             name = "Deploy"
