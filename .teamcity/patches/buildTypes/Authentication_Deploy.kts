@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.dockerSupport
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
 
@@ -24,6 +25,14 @@ create(RelativeId("Authentication"), BuildType({
             commandType = other {
                 subCommand = "stack"
                 commandArgs = "deploy --prune --with-registry-auth -c docker-compose.yml minecolonies_donator_auth"
+            }
+        }
+    }
+
+    features {
+        dockerSupport {
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_7"
             }
         }
     }
