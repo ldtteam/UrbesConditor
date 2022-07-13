@@ -19,6 +19,10 @@ create(RelativeId("Authentication"), BuildType({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
+    params {
+        param("env.DOCKER_CERT_PATH", "/auth/docker")
+    }
+
     vcs {
         root(RelativeId("Authentication_HttpsGithubComLdtteamAuthenticationGitRefsHeadsMaster"))
     }
