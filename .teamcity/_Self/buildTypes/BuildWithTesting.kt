@@ -97,7 +97,7 @@ object BuildWithTesting : Template({
             dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerImage = "gradle:%env.GRADLE_VERSION%-%env.JDK_VERSION%"
             dockerRunParameters = """
-                --v /opt/buildagent/gradle:/home/gradle/.gradle
+                -v /opt/buildagent/gradle:/home/gradle/.gradle
                 -u 0
             """.trimIndent()
             param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseText", "%Project.Type%")
