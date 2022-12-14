@@ -98,7 +98,7 @@ object BuildWithRelease : Template({
             enableStacktrace = true
             dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerImage = "gradle:%env.GRADLE_VERSION%-%env.JDK_VERSION%"
-            dockerRunParameters = "-u 0 -v /opt/share/buildsystem/gradle:/home/gradle/.gradle"
+            dockerRunParameters = "-u 0 -v /opt/buildagent/gradle:/home/gradle/.gradle"
             param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseText", "%Project.Type%")
             param("org.jfrog.artifactory.selectedDeployableServer.publishBuildInfo", "true")
             param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
