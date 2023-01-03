@@ -11,18 +11,11 @@ object Project : Project({
 
     vcsRoot(General)
 
-    template(Documentation)
-    template(Test)
-    template(Minecolonies_PullRequests_2_DeployTestServer_2)
-    template(Compile)
     template(Build)
     template(CommonBuildCounter)
-    template(Analysis)
-    template(DeployCurseForge)
     template(Upgrade)
     template(BuildWithRelease)
     template(BuildWithTesting)
-    template(GenerateChangelog)
 
     params {
         password("env.CROWD_IN_API_KEY", "credentialsJSON:9d0dc22f-1a99-4dc2-a422-7f0fa2abc3e5", label = "Crowdin API Key", display = ParameterDisplay.HIDDEN, readOnly = true)
