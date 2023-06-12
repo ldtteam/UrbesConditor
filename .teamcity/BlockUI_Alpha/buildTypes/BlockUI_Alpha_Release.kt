@@ -13,6 +13,7 @@ object BlockUI_Alpha_Release : BuildType({
 
     params {
         param("gradle.version", "7.3")
+        param("Default.Branch", "main")
         param("jdk.version", "jdk17")
         param("env.Version.Patch", "${BlockUI_OfficialPublications_CommonB.depParamRefs.buildNumber}")
     }
