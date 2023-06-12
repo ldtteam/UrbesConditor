@@ -52,19 +52,6 @@ object BuildWithRelease : Template({
             param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
             param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
         }
-        gradle {
-            name = "Setup"
-            id = "RUNNER_83"
-            enabled = false
-            tasks = "setupCIWorkspace --parallel"
-            buildFile = "build.gradle"
-            useGradleWrapper = false
-            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
-            dockerImage = "gradle:%gradle.version%-jdk%jdk.version%"
-            param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
-            param("secure:org.jfrog.artifactory.selectedDeployableServer.deployerPassword", "credentialsJSON:c3b6b26d-a9f5-4697-aeec-6961bb8b04d2")
-            param("org.jfrog.artifactory.selectedDeployableServer.deployerUsername", "Minecolonies_TeamCity")
-        }
         script {
             name = "Determine gradle version"
             id = "RUNNER_134"
@@ -96,8 +83,8 @@ object BuildWithRelease : Template({
             tasks = "build createChangelog curseforge publish"
             buildFile = "build.gradle"
             enableStacktrace = true
-            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerImage = "gradle:%env.GRADLE_VERSION%-%env.JDK_VERSION%"
+            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerRunParameters = "-u 0 -v /opt/buildagent/gradle:/home/gradle/.gradle"
             param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseText", "%Project.Type%")
             param("org.jfrog.artifactory.selectedDeployableServer.publishBuildInfo", "true")
