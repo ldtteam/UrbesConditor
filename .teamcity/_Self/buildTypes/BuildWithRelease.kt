@@ -5,7 +5,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.vcsLabeling
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.GradleBuildStep
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
@@ -48,31 +47,6 @@ object BuildWithRelease : Template({
             name = "Clean build dir"
             id = "RUNNER_85"
             scriptContent = "rm -rf build"
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
-        }
-        script {
-            name = "Determine gradle version"
-            id = "RUNNER_134"
-            enabled = false
-            workingDir = "gradle/wrapper"
-            scriptContent = """
-                VERSION=${'$'}(cat gradle-wrapper.properties | grep "distributionUrl" | cut -d '-' -f 2)
-                echo "##teamcity[setParameter name='env.GRADLE_VERSION' value='${'$'}VERSION']"
-                
-                FILE="java-runtime.properties"
-                VAR=""
-                if test -f "${'$'}FILE"; then
-                  VAR=${'$'}(cat java-runtime.properties | grep "version" | cut -d '=' -f 2)
-                else
-                  VAR="${'$'}{JDK_VERSION}"
-                fi
-                
-                echo "##teamcity[setParameter name='env.JDK_VERSION' value='${'$'}VAR']"
-            """.trimIndent()
-            formatStderrAsError = true
-            dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
             param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
             param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
             param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
