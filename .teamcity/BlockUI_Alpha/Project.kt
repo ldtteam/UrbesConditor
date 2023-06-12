@@ -12,9 +12,8 @@ object Project : Project({
     buildType(BlockUI_Alpha_Release)
 
     params {
-        param("Default.Branch", "version/latest")
-        param("VCS.Branches", "+:refs/heads/version/(*)")
         param("env.CURSERELEASETYPE", "alpha")
+        param("VCS.Branches", "+:refs/heads/version/(*)")
         param("env.Version.Suffix", "-ALPHA")
     }
 })
