@@ -11,6 +11,7 @@ object CommonBuildCounter : Template({
         script {
             name = "Echo build number"
             id = "RUNNER_82"
+            enabled = false
             scriptContent = "echo %build.number%"
             param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
             param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
