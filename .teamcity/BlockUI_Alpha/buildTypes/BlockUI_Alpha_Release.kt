@@ -16,6 +16,10 @@ object BlockUI_Alpha_Release : BuildType({
         param("env.Version.Patch", "${BlockUI_OfficialPublications_CommonB.depParamRefs.buildNumber}")
     }
 
+    vcs {
+        branchFilter = "+:*"
+    }
+
     dependencies {
         snapshot(BlockUI_OfficialPublications.buildTypes.BlockUI_OfficialPublications_CommonB) {
             reuseBuilds = ReuseBuilds.NO
