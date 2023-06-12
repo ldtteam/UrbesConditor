@@ -57,17 +57,8 @@ object BuildWithRelease : Template({
             tasks = "build createChangelog curseforge publish"
             buildFile = "build.gradle"
             enableStacktrace = true
-            dockerImage = "gradle:%env.GRADLE_VERSION%-%env.JDK_VERSION%"
             dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerRunParameters = "-u 0 -v /opt/buildagent/gradle:/home/gradle/.gradle"
-            param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseText", "%Project.Type%")
-            param("org.jfrog.artifactory.selectedDeployableServer.publishBuildInfo", "true")
-            param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
-            param("org.jfrog.artifactory.selectedDeployableServer.urlId", "2")
-            param("org.jfrog.artifactory.selectedDeployableServer.envVarsExcludePatterns", "*password*,*secret*")
-            param("org.jfrog.artifactory.selectedDeployableServer.resolvingRepo", "modding")
-            param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseFlag", "true")
-            param("org.jfrog.artifactory.selectedDeployableServer.targetRepo", "libraries")
         }
     }
 
