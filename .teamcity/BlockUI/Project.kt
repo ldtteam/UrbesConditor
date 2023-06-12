@@ -17,6 +17,7 @@ object Project : Project({
         param("Upsource.Project.Id", "blockui")
         param("env.Version.Suffix", "")
         param("env.Version.Major", "0")
+        param("Default.Branch", "version/main")
         text("env.Version", "%env.Version.Major%.%env.Version.Minor%.%env.Version.Patch%%env.Version.Suffix%", label = "Version", description = "The version of the project.", display = ParameterDisplay.HIDDEN, allowEmpty = true)
     }
 
