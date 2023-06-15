@@ -4,9 +4,7 @@ import _Self.vcsRoots.General
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.GradleBuildStep
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.ScriptBuildStep
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.gradle
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 object Build : Template({
@@ -43,43 +41,6 @@ object Build : Template({
     }
 
     steps {
-        gradle {
-            name = "Setup"
-            id = "RUNNER_83"
-            enabled = false
-            tasks = "setupCIWorkspace --parallel"
-            buildFile = "build.gradle"
-            useGradleWrapper = false
-            dockerImage = "gradle:%gradle.version%-jdk%jdk.version%"
-            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
-            param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
-            param("secure:org.jfrog.artifactory.selectedDeployableServer.deployerPassword", "credentialsJSON:c3b6b26d-a9f5-4697-aeec-6961bb8b04d2")
-            param("org.jfrog.artifactory.selectedDeployableServer.deployerUsername", "Minecolonies_TeamCity")
-        }
-        script {
-            name = "Determine gradle version"
-            id = "RUNNER_132"
-            workingDir = "gradle/wrapper"
-            scriptContent = """
-                VERSION=${'$'}(cat gradle-wrapper.properties | grep "distributionUrl" | cut -d '-' -f 2)
-                echo "##teamcity[setParameter name='env.GRADLE_VERSION' value='${'$'}VERSION']"
-                
-                FILE="java-runtime.properties"
-                VAR=""
-                if test -f "${'$'}FILE"; then
-                  VAR=${'$'}(cat java-runtime.properties | grep "version" | cut -d '=' -f 2)
-                else
-                  VAR="${'$'}{JDK_VERSION}"
-                fi
-                
-                echo "##teamcity[setParameter name='env.JDK_VERSION' value='${'$'}VAR']"
-            """.trimIndent()
-            formatStderrAsError = true
-            dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
-        }
         gradle {
             name = "Compile"
             id = "RUNNER_9"
