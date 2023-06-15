@@ -43,15 +43,6 @@ object Build : Template({
     }
 
     steps {
-        script {
-            name = "Clean build dir"
-            id = "RUNNER_85"
-            enabled = false
-            scriptContent = "rm -rf build"
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
-        }
         gradle {
             name = "Setup"
             id = "RUNNER_83"
@@ -59,8 +50,8 @@ object Build : Template({
             tasks = "setupCIWorkspace --parallel"
             buildFile = "build.gradle"
             useGradleWrapper = false
-            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerImage = "gradle:%gradle.version%-jdk%jdk.version%"
+            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
             param("secure:org.jfrog.artifactory.selectedDeployableServer.deployerPassword", "credentialsJSON:c3b6b26d-a9f5-4697-aeec-6961bb8b04d2")
             param("org.jfrog.artifactory.selectedDeployableServer.deployerUsername", "Minecolonies_TeamCity")
@@ -97,8 +88,8 @@ object Build : Template({
             gradleParams = "-x test"
             useGradleWrapper = false
             enableStacktrace = true
-            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerImage = "gradle:%env.GRADLE_VERSION%-%env.JDK_VERSION%"
+            dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerRunParameters = "-v /opt/buildagent/gradle:/home/gradle/.gradle -u 0"
             param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseText", "%Project.Type%")
             param("org.jfrog.artifactory.selectedDeployableServer.buildRetentionNumberOfBuilds", "300")
