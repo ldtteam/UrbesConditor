@@ -44,7 +44,6 @@ object BuildWithTesting : Template({
             id = "RUNNER_9"
             tasks = "build"
             buildFile = "build.gradle"
-            useGradleWrapper = false
             enableStacktrace = true
             dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
         }
