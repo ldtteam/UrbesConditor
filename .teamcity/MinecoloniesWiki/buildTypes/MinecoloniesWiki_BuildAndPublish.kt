@@ -8,6 +8,10 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
 
     artifactRules = "+:docker-compose.yml"
 
+    params {
+        param("docker.server.version", "1")
+    }
+
     vcs {
         root(MinecoloniesWiki.vcsRoots.MinecoloniesWiki_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain)
     }
