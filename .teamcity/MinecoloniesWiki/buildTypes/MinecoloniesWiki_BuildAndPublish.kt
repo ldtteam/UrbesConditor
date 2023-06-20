@@ -1,7 +1,6 @@
 package MinecoloniesWiki.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.dockerSupport
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 
 object MinecoloniesWiki_BuildAndPublish : BuildType({
@@ -48,14 +47,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
             executionMode = BuildStep.ExecutionMode.ALWAYS
             commandType = other {
                 subCommand = "logout"
-            }
-        }
-    }
-
-    features {
-        dockerSupport {
-            loginToRegistry = on {
-                dockerRegistryId = "PROJECT_EXT_9"
             }
         }
     }
