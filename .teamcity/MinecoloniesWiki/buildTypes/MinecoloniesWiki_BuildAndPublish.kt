@@ -45,6 +45,7 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Push"
+            enabled = false
             commandType = push {
                 namesAndTags = """
                     %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:latest
