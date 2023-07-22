@@ -37,6 +37,7 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Login"
+            enabled = false
             commandType = other {
                 subCommand = "login"
                 commandArgs = "-u %env.DOCKER_USERNAME% -p %env.DOCKER_PASSWORD% %env.DOCKER_REGISTRY%"
