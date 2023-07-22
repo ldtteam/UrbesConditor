@@ -23,6 +23,7 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Build"
+            enabled = false
             commandType = build {
                 source = file {
                     path = "Dockerfile"
