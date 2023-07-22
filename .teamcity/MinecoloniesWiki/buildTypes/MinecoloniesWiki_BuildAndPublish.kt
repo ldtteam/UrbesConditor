@@ -14,6 +14,13 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
     }
 
     steps {
+        script {
+            name = "Install Buildah"
+            scriptContent = """
+                sudo apt-get update
+                sudo apt-get -y install buildah
+            """.trimIndent()
+        }
         dockerCommand {
             name = "Docker Build"
             commandType = build {
@@ -49,13 +56,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
             commandType = other {
                 subCommand = "logout"
             }
-        }
-        script {
-            name = "Install Buildah"
-            scriptContent = """
-                sudo apt-get update
-                sudo apt-get -y install buildah
-            """.trimIndent()
         }
     }
 })
