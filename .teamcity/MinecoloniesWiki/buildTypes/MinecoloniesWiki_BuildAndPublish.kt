@@ -55,6 +55,7 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Logout"
+            enabled = false
             executionMode = BuildStep.ExecutionMode.ALWAYS
             commandType = other {
                 subCommand = "logout"
