@@ -6,6 +6,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 object MinecoloniesWiki_BuildAndPublish : BuildType({
     name = "Build and Publish"
+    paused = true
 
     artifactRules = "+:docker-compose.yml"
 
