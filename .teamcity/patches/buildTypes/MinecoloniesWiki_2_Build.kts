@@ -23,7 +23,7 @@ create(RelativeId("MinecoloniesWiki_2"), BuildType({
     steps {
         script {
             name = "Install Buildah"
-            scriptContent = "sudo apt update && sudo apt install buildah -y"
+            scriptContent = "apt update && apt install buildah -y"
         }
         script {
             name = "Build Container using Buildah"
