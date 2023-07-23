@@ -11,6 +11,6 @@ in the root project, and delete the patch script.
 */
 create(DslContext.projectId, Project({
     id("MinecoloniesWiki_2")
-    name = "MinecoloniesWiki"
+    name = "Minecolonies - Wiki"
 }))
 
