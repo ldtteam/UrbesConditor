@@ -25,6 +25,10 @@ create(RelativeId("MinecoloniesWiki_2"), BuildType({
             name = "Install Buildah"
             scriptContent = "sudo apt update && sudo apt install buildah -y"
         }
+        script {
+            name = "Build Container using Buildah"
+            scriptContent = "buildah build -t %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:latest -t %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:%build.number% --pull --file Dockerfile"
+        }
     }
 
     triggers {
