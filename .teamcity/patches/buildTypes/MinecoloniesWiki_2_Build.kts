@@ -3,6 +3,7 @@ package patches.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
 
@@ -17,6 +18,13 @@ create(RelativeId("MinecoloniesWiki_2"), BuildType({
 
     vcs {
         root(RelativeId("MinecoloniesWiki_2_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain"))
+    }
+
+    steps {
+        script {
+            name = "Install Buildah"
+            scriptContent = "sudo apt update && sudo apt install buildah -y"
+        }
     }
 
     triggers {
