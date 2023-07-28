@@ -8,7 +8,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 object MinecoloniesWiki_Deploy : BuildType({
     name = "Deploy"
     description = "Deploys the wiki into the swarm"
-    paused = true
 
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
