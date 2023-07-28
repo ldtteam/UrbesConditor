@@ -2,7 +2,6 @@ package MinecoloniesWiki.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 object MinecoloniesWiki_BuildAndPublish : BuildType({
     name = "Build and Publish"
@@ -14,13 +13,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
     }
 
     steps {
-        script {
-            name = "Install Buildah"
-            scriptContent = """
-                sudo apt-get update
-                sudo apt-get -y install buildah
-            """.trimIndent()
-        }
         dockerCommand {
             name = "Docker Build"
             enabled = false
