@@ -15,7 +15,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
     steps {
         dockerCommand {
             name = "Docker Build"
-            enabled = false
             commandType = build {
                 source = file {
                     path = "Dockerfile"
@@ -29,7 +28,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Login"
-            enabled = false
             commandType = other {
                 subCommand = "login"
                 commandArgs = "-u %env.DOCKER_USERNAME% -p %env.DOCKER_PASSWORD% %env.DOCKER_REGISTRY%"
@@ -37,7 +35,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Push"
-            enabled = false
             commandType = push {
                 namesAndTags = """
                     %env.DOCKER_REGISTRY%/ldtteam/minecolonies/wiki:latest
@@ -47,7 +44,6 @@ object MinecoloniesWiki_BuildAndPublish : BuildType({
         }
         dockerCommand {
             name = "Docker Logout"
-            enabled = false
             executionMode = BuildStep.ExecutionMode.ALWAYS
             commandType = other {
                 subCommand = "logout"
