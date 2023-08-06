@@ -21,6 +21,10 @@ object MinecoloniesWiki_Deploy : BuildType({
         text("env.DOCKER_HOST", "tcp://192.168.10.52:2376", label = "Docker host", description = "The docker host to deploy the target on.", allowEmpty = true)
     }
 
+    vcs {
+        root(MinecoloniesWiki.vcsRoots.MinecoloniesWiki_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain)
+    }
+
     steps {
         script {
             name = "Install Kubectl & Helm"
