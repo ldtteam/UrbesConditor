@@ -55,6 +55,11 @@ object MinecoloniesWiki_Deploy : BuildType({
                 kubectl get namespaces
             """.trimIndent()
         }
+        script {
+            name = "Deploy wiki chart"
+            workingDir = "charts"
+            scriptContent = "helm upgrade --atomic -i -n minecolonies-wiki -set image.tag=${MinecoloniesWiki_BuildAndPublish.depParamRefs.buildNumber} wiki"
+        }
     }
 
     triggers {
