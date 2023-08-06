@@ -22,13 +22,6 @@ object MinecoloniesWiki_Deploy : BuildType({
 
     steps {
         dockerCommand {
-            name = "Docker Stack Deployment"
-            commandType = other {
-                subCommand = "stack"
-                commandArgs = "deploy --prune --with-registry-auth -c docker-compose.yml minecolonies_wiki"
-            }
-        }
-        dockerCommand {
             name = "Logout"
             executionMode = BuildStep.ExecutionMode.ALWAYS
             commandType = other {
