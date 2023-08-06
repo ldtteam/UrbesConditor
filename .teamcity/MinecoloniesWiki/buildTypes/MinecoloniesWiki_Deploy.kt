@@ -71,15 +71,9 @@ object MinecoloniesWiki_Deploy : BuildType({
     }
 
     dependencies {
-        dependency(MinecoloniesWiki_BuildAndPublish) {
-            snapshot {
-                reuseBuilds = ReuseBuilds.NO
-                onDependencyFailure = FailureAction.FAIL_TO_START
-            }
-
-            artifacts {
-                artifactRules = "+:docker-compose.yml"
-            }
+        snapshot(MinecoloniesWiki_BuildAndPublish) {
+            reuseBuilds = ReuseBuilds.NO
+            onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
 })
