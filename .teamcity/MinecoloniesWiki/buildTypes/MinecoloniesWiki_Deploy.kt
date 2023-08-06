@@ -51,6 +51,8 @@ object MinecoloniesWiki_Deploy : BuildType({
             scriptContent = """
                 echo "%Kubeconfig% >> ~/.kube/config
                 chmod 644 ~/.kube/config
+                
+                kubectl get namespaces
             """.trimIndent()
         }
     }
