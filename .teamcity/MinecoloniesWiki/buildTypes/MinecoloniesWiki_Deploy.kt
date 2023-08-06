@@ -15,9 +15,10 @@ object MinecoloniesWiki_Deploy : BuildType({
 
     params {
         text("env.DOCKER_CERT_PATH", "/auth/docker", label = "Docker certificates path", description = "The path to the docker certificates on the agent that allow for authentication with the target docker host.", allowEmpty = true)
-        text("env.DOCKER_HOST", "tcp://192.168.10.52:2376", label = "Docker host", description = "The docker host to deploy the target on.", allowEmpty = true)
         checkbox("env.DOCKER_TLS_VERIFY", "1", label = "Docker TLS Verify", description = "Indicator used to verifiy the remote servers TLS data.",
                   checked = "1", unchecked = "0")
+        password("Kubeconfig", "credentialsJSON:f18aa71f-dc14-44b4-ac21-02c47cbb7c68", display = ParameterDisplay.HIDDEN, readOnly = true)
+        text("env.DOCKER_HOST", "tcp://192.168.10.52:2376", label = "Docker host", description = "The docker host to deploy the target on.", allowEmpty = true)
     }
 
     steps {
