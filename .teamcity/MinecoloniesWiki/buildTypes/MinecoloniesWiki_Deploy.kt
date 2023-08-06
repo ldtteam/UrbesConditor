@@ -30,19 +30,19 @@ object MinecoloniesWiki_Deploy : BuildType({
                     echo "Installing KubeCtl and HELM..."
                     
                     # prereq packages
-                    apt-get update
-                	apt-get install -y wget ca-certificates gnupg2
+                    sudo apt-get update
+                	sudo apt-get install -y wget ca-certificates gnupg2
                 
                 	# add repo and signing key
-                    curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+                    curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
                 	echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-                    apt-get update
+                    sudo apt-get update
                 
                 	# install kubectl
                 	sudo apt-get install -y kubectl
                     
                     # install helm
-                    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+                    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |  bash
                 fi
             """.trimIndent()
         }
