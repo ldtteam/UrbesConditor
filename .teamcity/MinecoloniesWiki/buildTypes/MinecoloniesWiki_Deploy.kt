@@ -50,6 +50,7 @@ object MinecoloniesWiki_Deploy : BuildType({
         script {
             name = "Setup Kubeconfig"
             scriptContent = """
+                mkdir -p ~/.kube
                 echo "%Kubeconfig%" >> ~/.kube/config
                 chmod 644 ~/.kube/config
                 
