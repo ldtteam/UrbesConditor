@@ -45,6 +45,10 @@ object MinecoloniesWiki_Deploy : BuildType({
                 fi
             """.trimIndent()
         }
+        script {
+            name = "Setup Kubeconfig"
+            scriptContent = "b"
+        }
     }
 
     triggers {
