@@ -50,7 +50,7 @@ object MinecoloniesWiki_Deploy : BuildType({
         script {
             name = "Setup Kubeconfig"
             scriptContent = """
-                echo "%Kubeconfig% >> ~/.kube/config
+                echo "%Kubeconfig%" >> ~/.kube/config
                 chmod 644 ~/.kube/config
                 
                 kubectl get namespaces
