@@ -63,11 +63,7 @@ object MinecoloniesWiki_Deploy : BuildType({
         }
         script {
             name = "Deploy wiki chart"
-            scriptContent = """
-                ls
-                ls chart
-                helm upgrade --atomic -i -n minecolonies-wiki --set image.tag=${MinecoloniesWiki_BuildAndPublish.depParamRefs.buildNumber} minecolonies-wiki ./chart/wiki
-            """.trimIndent()
+            scriptContent = "helm upgrade --atomic -i -n minecolonies-wiki --set image.tag=${MinecoloniesWiki_BuildAndPublish.depParamRefs.buildNumber} minecolonies-wiki ./chart/wiki"
         }
     }
 
