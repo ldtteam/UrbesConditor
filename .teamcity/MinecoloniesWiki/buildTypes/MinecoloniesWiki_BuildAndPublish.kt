@@ -6,8 +6,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 object MinecoloniesWiki_BuildAndPublish : BuildType({
     name = "Build and Publish"
 
-    artifactRules = "+:docker-compose.yml"
-
     vcs {
         root(MinecoloniesWiki.vcsRoots.MinecoloniesWiki_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain)
     }
