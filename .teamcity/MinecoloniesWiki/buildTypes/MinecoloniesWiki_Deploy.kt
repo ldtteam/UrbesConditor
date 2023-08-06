@@ -22,13 +22,6 @@ object MinecoloniesWiki_Deploy : BuildType({
 
     steps {
         dockerCommand {
-            name = "Docker Login"
-            commandType = other {
-                subCommand = "login"
-                commandArgs = "-u %env.DOCKER_USERNAME% -p %env.DOCKER_PASSWORD% %env.DOCKER_REGISTRY%"
-            }
-        }
-        dockerCommand {
             name = "Docker Stack Deployment"
             commandType = other {
                 subCommand = "stack"
