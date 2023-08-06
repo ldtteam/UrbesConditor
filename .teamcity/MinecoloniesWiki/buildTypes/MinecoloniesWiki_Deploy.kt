@@ -1,7 +1,6 @@
 package MinecoloniesWiki.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
@@ -18,16 +17,6 @@ object MinecoloniesWiki_Deploy : BuildType({
         text("env.DOCKER_HOST", "tcp://192.168.10.52:2376", label = "Docker host", description = "The docker host to deploy the target on.", allowEmpty = true)
         checkbox("env.DOCKER_TLS_VERIFY", "1", label = "Docker TLS Verify", description = "Indicator used to verifiy the remote servers TLS data.",
                   checked = "1", unchecked = "0")
-    }
-
-    steps {
-        dockerCommand {
-            name = "Logout"
-            executionMode = BuildStep.ExecutionMode.ALWAYS
-            commandType = other {
-                subCommand = "logout"
-            }
-        }
     }
 
     triggers {
