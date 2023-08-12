@@ -50,6 +50,15 @@ object Build : Template({
             enableStacktrace = true
             dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerRunParameters = "-v /opt/buildagent/gradle:/home/gradle/.gradle -u 0"
+            param("org.jfrog.artifactory.selectedDeployableServer.useM2CompatiblePatterns", "true")
+            param("org.jfrog.artifactory.selectedDeployableServer.publishBuildInfo", "true")
+            param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
+            param("org.jfrog.artifactory.selectedDeployableServer.buildDependencies", "Requires Artifactory Pro.")
+            param("org.jfrog.artifactory.selectedDeployableServer.envVarsExcludePatterns", "*password*,*secret*")
+            param("org.jfrog.artifactory.selectedDeployableServer.resolvingRepo", "null")
+            param("org.jfrog.artifactory.selectedDeployableServer.publishMavenDescriptors", "true")
+            param("org.jfrog.artifactory.selectedDeployableServer.publishIvyDescriptors", "true")
+            param("org.jfrog.artifactory.selectedDeployableServer.targetRepo", "MinecraftForge")
         }
     }
 
