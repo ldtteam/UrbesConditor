@@ -51,12 +51,9 @@ object Build : Template({
             dockerImagePlatform = GradleBuildStep.ImagePlatform.Linux
             dockerRunParameters = "-v /opt/buildagent/gradle:/home/gradle/.gradle -u 0"
             param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseText", "%Project.Type%")
-            param("org.jfrog.artifactory.selectedDeployableServer.useM2CompatiblePatterns", "true")
             param("org.jfrog.artifactory.selectedDeployableServer.buildRetentionNumberOfBuilds", "120")
             param("org.jfrog.artifactory.selectedDeployableServer.defaultModuleVersionConfiguration", "GLOBAL")
             param("org.jfrog.artifactory.selectedDeployableServer.buildRetention", "true")
-            param("org.jfrog.artifactory.selectedDeployableServer.publishMavenDescriptors", "true")
-            param("org.jfrog.artifactory.selectedDeployableServer.activateGradleIntegration", "true")
             param("org.jfrog.artifactory.selectedDeployableServer.deployReleaseFlag", "true")
             param("org.jfrog.artifactory.selectedDeployableServer.buildRetentionAsync", "true")
             param("org.jfrog.artifactory.selectedDeployableServer.publishBuildInfo", "true")
@@ -65,9 +62,7 @@ object Build : Template({
             param("org.jfrog.artifactory.selectedDeployableServer.resolvingRepo", "null")
             param("org.jfrog.artifactory.selectedDeployableServer.resolveReleaseText", "%Project.Type%")
             param("org.jfrog.artifactory.selectedDeployableServer.buildRetentionDeleteArtifacts", "true")
-            param("org.jfrog.artifactory.selectedDeployableServer.publishIvyDescriptors", "true")
             param("org.jfrog.artifactory.selectedDeployableServer.buildRetentionMaxDays", "30")
-            param("org.jfrog.artifactory.selectedDeployableServer.deployArtifacts", "true")
         }
     }
 
