@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 
 object MinecoloniesWiki_BuildAndPublish : BuildType({
     name = "Build and Publish"
+    paused = true
 
     vcs {
         root(MinecoloniesWiki.vcsRoots.MinecoloniesWiki_HttpsGithubComLdtteamMinecoloniesWikiRefsHeadsMain)
