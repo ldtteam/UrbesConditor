@@ -10,7 +10,7 @@ To apply the patch, create a project with id = 'Authentication'
 in the root project, and delete the patch script.
 */
 create(DslContext.projectId, Project({
-    id("patches")
+    id("Authentication")
     name = "Donator-Authentication"
 }))
 
