@@ -11,6 +11,7 @@ object Project : Project({
 
     params {
         text("Repository", "ldtteam/datagenerators", label = "Repository", description = "The repository for minecolonies.", allowEmpty = true)
+        param("Current Minecraft Version", "latest")
         param("env.Version.Minor", "1")
         param("Project.Type", "libraries")
         param("env.Version.Patch", "0")
