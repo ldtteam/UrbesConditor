@@ -12,5 +12,6 @@ in the root project, and delete the patch script.
 create(DslContext.projectId, Project({
     id("MinecoloniesWebsite")
     name = "Minecolonies - Website"
+    archived = true
 }))
 

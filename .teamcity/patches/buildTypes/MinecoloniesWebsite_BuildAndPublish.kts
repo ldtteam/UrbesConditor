@@ -14,6 +14,7 @@ in the project with id = 'MinecoloniesWebsite', and delete the patch script.
 create(RelativeId("MinecoloniesWebsite"), BuildType({
     id("MinecoloniesWebsite_BuildAndPublish")
     name = "Build and Publish"
+    paused = true
 
     artifactRules = "+:docker-compose.yml"
 

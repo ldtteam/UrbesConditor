@@ -16,6 +16,7 @@ create(RelativeId("MinecoloniesWebsite"), BuildType({
     id("MinecoloniesWebsite_Deploy")
     name = "Deploy"
     description = "Deploys the website into the swarm"
+    paused = true
 
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
