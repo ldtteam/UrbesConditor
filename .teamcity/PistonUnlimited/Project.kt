@@ -1,5 +1,6 @@
 package PistonUnlimited
 
+import PistonUnlimited.vcsRoots.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.Project
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.githubIssues
@@ -8,6 +9,8 @@ object Project : Project({
     id("PistonUnlimited")
     name = "Piston Unlimited"
     description = "Structure based world modification using creative wants."
+
+    vcsRoot(PistonUnlimited_Configuration)
 
     params {
         password("env.crowdinKey", "credentialsJSON:444bd785-791b-42ae-9fae-10ee93a2fbd3")
