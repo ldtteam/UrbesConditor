@@ -11,6 +11,7 @@ object PistonUnlimited_Alpha_Release : BuildType({
     params {
         param("Project.Type", "mods")
         param("env.Version.Patch", "${PistonUnlimited_OfficialPublications_CommonB.depParamRefs.buildNumber}")
+        param("Current Minecraft Version", "main")
     }
 
     dependencies {
